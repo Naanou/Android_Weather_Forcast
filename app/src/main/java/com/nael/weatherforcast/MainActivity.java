@@ -3,11 +3,13 @@ package com.nael.weatherforcast;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView ville,date,temps,temp,vent,humidité;
+    ImageView icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
         temp = (TextView) findViewById(R.id.temperature);
         vent = (TextView) findViewById(R.id.vent);
         humidité = (TextView) findViewById(R.id.humidité);
+        icon = (ImageView) findViewById(R.id.icon);
 
-        new MyAsincTask().execute(ville,date,temps,temp,vent,humidité);
+        new MyAsincTask().execute(ville,date,temps,temp,vent,humidité,icon);
     }
 
 
